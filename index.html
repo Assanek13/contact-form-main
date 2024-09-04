@@ -13,54 +13,54 @@
         <form action="#" id="form" method="post">
             <div class="user-details">
                 <div class="input-box">
-                    <span class="details">First Name *</span>
-                    <input type="text" name="firstname" required>
+                    <label class="details" for="firstname">First Name *</label>
+                    <input type="text" name="firstname" id="firstname" required>
                     <div class="error-message" id="firstNameError"></div>
                 </div>
 
                 <div class="input-box">
-                    <span class="details">Last Name *</span>
-                    <input type="text" name="lastname" required>
+                    <label class="details" for="lastname">Last Name *</label>
+                    <input type="text" name="lastname" id="lastname" required>
                     <div class="error-message" id="lastNameError"></div>
                 </div>
 
                 <div class="email-box">
-					<span class="details">Email Adress *</span>
-					<input type="text" name="email" required>
-					<div class="error-message" id="emailError"></div>
-				</div>
+                    <label class="details" for="email">Email Address *</label>
+                    <input type="email" name="email" id="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
             </div>
             <div class="query-details">
                 <span class="query-title">Query Type *</span>
                 <div class="category">
                     <div class="query-type">
-                        <input type="radio" name="query" id="dot-1" />
-                        <span class="query">General Enquiry</span>
+                        <input type="radio" name="query" id="dot-1">
+                        <label for="dot-1" class="query">General Enquiry</label>
                     </div>
                     <div class="query-type">
-                        <input type="radio" name="query" id="dot-1" />
-                        <span class="query">Support Request</span>
+                        <input type="radio" name="query" id="dot-2">
+                        <label for="dot-2" class="query">Support Request</label>
                     </div>
                 </div>
-                <div id="queryrError" class="error-message"></div>
-            <div>
+                <div id="queryError" class="error-message"></div>
+            </div>
             <div class="user-details">
                 <div class="textarea-box">
-                    <span class="details">Message *</span>
-                    <textarea name="msg" required></textarea>
+                    <label class="details" for="msg">Message *</label>
+                    <textarea name="msg" id="msg" required></textarea>
                     <div class="error-message" id="msgError"></div>
                 </div>
             </div>
 
             <div class="accepted">
-				<input type="checkbox" name="accept" required>
-				<span class="choix">I consent being contacted by the team *</span>
+                <input type="checkbox" name="accept" id="accept" required>
+                <label for="accept" class="choix">I consent being contacted by the team *</label>
                 <div class="error-message" id="acceptError"></div>
-			</div>
+            </div>
 
             <div class="button">
-				<input type="submit" value="Submit">
-			</div>
+                <input type="submit" value="Submit">
+            </div>
         </form>
     </div>
 </body>

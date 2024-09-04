@@ -1,69 +1,68 @@
 document.getElementById('form').addEventListener('submit', function(event) {
-    event.preventDefault(); 
+    let valid = true;
 
-    let isValid = true;
-    clearErrors(); 
-
-    const firstname = document.querySelector('input[name="firstname"]').value.trim();
-    const lastname = document.querySelector('input[name="lastname"]').value.trim();
-    const email = document.querySelector('input[name="email"]').value.trim();
-    const query = document.querySelector('input[name="query"]:checked');
-    const msg = document.querySelector('textarea[name="msg"]');
-    const accept = document.querySelector('input[name="accept"]')
-
-    if (firstname === '') {
-        showError('fullName', 'This field is required');
-        isValid = false;
+    // Vérifier le prénom
+    const firstName = document.getElementById('firstname');
+    const firstNameError = document.getElementById('firstNameError');
+    if (firstName.value.trim() === "") {
+        firstNameError.textContent = "First name is required";
+        valid = false;
+    } else {
+        firstNameError.textContent = "";
     }
 
-    if (lastname === '') {
-        showError('username', 'This field is required');
-        isValid = false;
+    // Vérifier le nom de famille
+    const lastName = document.getElementById('lastname');
+    const lastNameError = document.getElementById('lastNameError');
+    if (lastName.value.trim() === "") {
+        lastNameError.textContent = "Last name is required";
+        valid = false;
+    } else {
+        lastNameError.textContent = "";
     }
 
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-        showError('email', 'Please enter a valid email address');
-        isValid = false;
+    // Vérifier l'email
+    const email = document.getElementById('email');
+    const emailError = document.getElementById('emailError');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+        emailError.textContent = "Please enter a valid email address";
+        valid = false;
+    } else {
+        emailError.textContent = "";
     }
 
-    if (!query) {
-        showError('query', 'Please select a query type');
-        isValid = false;
+    // Vérifier le type de requête
+    const queryError = document.getElementById('queryError');
+    const querySelected = document.querySelector('input[name="query"]:checked');
+    if (!querySelected) {
+        queryError.textContent = "Please select a query type";
+        valid = false;
+    } else {
+        queryError.textContent = "";
     }
 
-    if (msg === '') {
-        showError('msg', 'This field is required');
-        isValid = false;
+    // Vérifier le message
+    const msg = document.getElementById('msg');
+    const msgError = document.getElementById('msgError');
+    if (msg.value.trim() === "") {
+        msgError.textContent = "Message is required";
+        valid = false;
+    } else {
+        msgError.textContent = "";
     }
 
-    if (!accept) {
-        showError('query', 'To submit this from, please consent to being contacted');
-        isValid = false;
+    // Vérifier l'acceptation
+    const accept = document.getElementById('accept');
+    const acceptError = document.getElementById('acceptError');
+    if (!accept.checked) {
+        acceptError.textContent = "You must consent to be contacted";
+        valid = false;
+    } else {
+        acceptError.textContent = "";
     }
 
-    if (isValid) {
-        this.submit();
+    if (!valid) {
+        event.preventDefault(); // Empêche la soumission du formulaire si non valide
     }
 });
-
-function showError(inputName, message) {
-    const input = document.querySelector(`input[name="${inputName}"]`);
-    const errorElement = document.getElementById(inputName + 'Error');
-    errorElement.textContent = message;
-    errorElement.classList.add('show');
-    input.classList.add('error');
-}
-
-function clearErrors() {
-    const errors = document.querySelectorAll('.error-message');
-    errors.forEach(error => {
-        error.classList.remove('show');
-        error.textContent = '';
-    });
-
-    const inputs = document.querySelectorAll('input.error');
-    inputs.forEach(input => {
-        input.classList.remove('error');
-    });
-}

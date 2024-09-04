@@ -1,4 +1,4 @@
-* {
+{
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -147,7 +147,3 @@ form .user-details .input-box {
 	letter-spacing: 1px;
 	background: hsl(169, 82%, 27%);
 }
-
-
-
-
