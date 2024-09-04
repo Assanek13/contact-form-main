@@ -1,0 +1,153 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background: hsl(148, 38%, 91%);
+}
+
+.container {
+	max-height: 700px;
+	width: 60%;
+	background: hsl(0, 0%, 100%);
+	padding: 25px 30px;
+	border-radius: 8px;
+}
+
+.container .title {
+	font-size: 25px;
+	font-weight: 700;
+	position: relative;
+}
+
+.container form .user-details {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box {
+	margin-bottom: 15px;
+	width: calc(100% / 2 - 20px);
+}
+
+.user-details .input-box .details {
+	display: block;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+
+.user-details .input-box input {
+	height: 30px;
+	width: 100%;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid hsl(186, 15%, 59%);
+	padding-left: 15px;
+	font-size: 16px;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.user-details .email-box {
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.user-details .email-box .details {
+	display: block;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+
+.user-details .email-box input {
+	height: 30px;
+	width: 100%;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid hsl(186, 15%, 59%);
+	padding-left: 15px;
+	font-size: 16px;
+	border-bottom-width: 2px;
+	cursor: pointer;
+}
+
+.query-details .query-title {
+	display: block;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+
+.category {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+.query-type {
+    border: 1.4px solid hsl(186, 15%, 59%);
+    padding: 0.8rem 7rem;
+    border-radius: 0.5rem;
+}
+
+.user-details .textarea-box {
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.user-details .textarea-box .details {
+	display: block;
+	font-weight: 400;
+	margin-bottom: 5px;
+}
+
+.user-details .textarea-box textarea {
+	height: 50px;
+	width: 100%;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid hsl(186, 15%, 59%);
+	padding-left: 15px;
+	padding: 10px;
+	font-size: 16px;
+	border-bottom-width: 2px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.accepted .choix {
+	font-weight: 400;
+	margin-left: 10px;
+	font-family: 'Karla' sans-serif;
+}
+
+.button {
+	height: 45px;
+	margin: 25px 0;
+}
+
+.button input {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	color: #fff;
+	border: none;
+	font-size: 18px;
+	font-weight: 500;
+	border-radius: 5px;
+	letter-spacing: 1px;
+	background: hsl(169, 82%, 27%);
+}
+
+
+
+
