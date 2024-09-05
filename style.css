@@ -1,149 +1,138 @@
-{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
-	display: flex;
-	height: 100vh;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-	background: hsl(148, 38%, 91%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: hsl(148, 38%, 91%);
 }
 
 .container {
-	max-height: 700px;
-	width: 60%;
-	background: hsl(0, 0%, 100%);
-	padding: 25px 30px;
-	border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.container .title {
-	font-size: 25px;
-	font-weight: 700;
-	position: relative;
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    color: hsl(169, 82%, 27%);
+    position: relative;
+    margin-bottom: 20px;
 }
 
-.container form .user-details {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin: 20px 0 12px 0;
+.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: hsl(169, 82%, 27%);
 }
 
-form .user-details .input-box {
-	margin-bottom: 15px;
-	width: calc(100% / 2 - 20px);
-}
-
-.user-details .input-box .details {
-	display: block;
-	font-weight: 400;
-	margin-bottom: 5px;
-}
-
-.user-details .input-box input {
-	height: 30px;
-	width: 100%;
-	outline: none;
-	border-radius: 5px;
-	border: 1px solid hsl(186, 15%, 59%);
-	padding-left: 15px;
-	font-size: 16px;
-	border-bottom-width: 2px;
-	transition: all 0.3s ease;
-	cursor: pointer;
-}
-
-.user-details .email-box {
-	margin-bottom: 15px;
+.user-details, .query-details, .textarea-box, .accepted {
+    margin-bottom: 15px;
 	width: 100%;
 }
 
-.user-details .email-box .details {
-	display: block;
-	font-weight: 400;
-	margin-bottom: 5px;
+.input-box, .email-box {
+    margin-bottom: 15px;
 }
 
-.user-details .email-box input {
-	height: 30px;
-	width: 100%;
-	outline: none;
-	border-radius: 5px;
-	border: 1px solid hsl(186, 15%, 59%);
-	padding-left: 15px;
-	font-size: 16px;
-	border-bottom-width: 2px;
-	cursor: pointer;
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.query-details .query-title {
-	display: block;
-	font-weight: 400;
-	margin-bottom: 5px;
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: hsl(169, 82%, 27%);
+}
+
+.query-title {
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: hsl(169, 82%, 27%);
 }
 
 .category {
     display: flex;
     justify-content: space-between;
-  }
-  
+    gap: 10px;
+}
+
 .query-type {
-    border: 1.4px solid hsl(186, 15%, 59%);
-    padding: 0.8rem 7rem;
-    border-radius: 0.5rem;
+    flex: 1;
+    padding: 10px;
+    border: 1px solid hsl(186, 15%, 59%);
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    color: hsl(169, 82%, 27%);
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.user-details .textarea-box {
-	margin-bottom: 15px;
-	width: 100%;
+.query-type input {
+    margin-right: 10px;
 }
 
-.user-details .textarea-box .details {
-	display: block;
-	font-weight: 400;
-	margin-bottom: 5px;
+.query-type:hover {
+    background-color: hsl(169, 82%, 27%);
+    color: #fff;
+    border-color: hsl(169, 82%, 27%);
 }
 
-.user-details .textarea-box textarea {
-	height: 50px;
-	width: 100%;
-	outline: none;
-	border-radius: 5px;
-	border: 1px solid hsl(186, 15%, 59%);
-	padding-left: 15px;
-	padding: 10px;
-	font-size: 16px;
-	border-bottom-width: 2px;
-	transition: all 0.3s ease;
-	cursor: pointer;
+.accepted {
+    display: flex;
+    align-items: center;
 }
 
 .accepted .choix {
-	font-weight: 400;
-	margin-left: 10px;
-	font-family: 'Karla' sans-serif;
+    margin-left: 10px;
+    font-family: 'Karla', sans-serif;
+    color: hsl(169, 82%, 27%);
 }
 
 .button {
-	height: 45px;
-	margin: 25px 0;
+    text-align: center;
 }
 
 .button input {
-	height: 100%;
-	width: 100%;
-	outline: none;
-	color: #fff;
-	border: none;
-	font-size: 18px;
-	font-weight: 500;
-	border-radius: 5px;
-	letter-spacing: 1px;
-	background: hsl(169, 82%, 27%);
+    width: 100%;
+    padding: 10px;
+    background-color: hsl(169, 82%, 27%);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button input:hover {
+    background-color: hsl(169, 82%, 37%);
+}
+
+.error-message {
+    color: hsl(0, 100%, 66%);
+    font-size: 14px;
+    margin-top: 5px;
+    font-family: 'Karla', sans-serif;
 }
