@@ -1,24 +1,36 @@
 document.getElementById('form').addEventListener('submit', function(event) {
     let valid = true;
 
+    // Fonction pour définir les styles en fonction de la validité
+    function setFieldState(input, error, message, isValid) {
+        if (!isValid) {
+            error.textContent = message;
+            input.style.borderColor = 'red';
+        } else {
+            error.textContent = '';
+            input.style.borderColor = 'green';
+            input.style.backgroundColor = '#e6ffe6'; // Couleur de fond pour la validation
+        }
+    }
+
     // Vérifier le prénom
     const firstName = document.getElementById('firstname');
     const firstNameError = document.getElementById('firstNameError');
     if (firstName.value.trim() === "") {
-        firstNameError.textContent = "First name is required";
+        setFieldState(firstName, firstNameError, "First name is required", false);
         valid = false;
     } else {
-        firstNameError.textContent = "";
+        setFieldState(firstName, firstNameError, "", true);
     }
 
     // Vérifier le nom de famille
     const lastName = document.getElementById('lastname');
     const lastNameError = document.getElementById('lastNameError');
     if (lastName.value.trim() === "") {
-        lastNameError.textContent = "Last name is required";
+        setFieldState(lastName, lastNameError, "Last name is required", false);
         valid = false;
     } else {
-        lastNameError.textContent = "";
+        setFieldState(lastName, lastNameError, "", true);
     }
 
     // Vérifier l'email
@@ -26,10 +38,10 @@ document.getElementById('form').addEventListener('submit', function(event) {
     const emailError = document.getElementById('emailError');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.value)) {
-        emailError.textContent = "Please enter a valid email address";
+        setFieldState(email, emailError, "Please enter a valid email address", false);
         valid = false;
     } else {
-        emailError.textContent = "";
+        setFieldState(email, emailError, "", true);
     }
 
     // Vérifier le type de requête
@@ -37,6 +49,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
     const querySelected = document.querySelector('input[name="query"]:checked');
     if (!querySelected) {
         queryError.textContent = "Please select a query type";
+        queryError.style.color = 'red';
         valid = false;
     } else {
         queryError.textContent = "";
@@ -46,10 +59,10 @@ document.getElementById('form').addEventListener('submit', function(event) {
     const msg = document.getElementById('msg');
     const msgError = document.getElementById('msgError');
     if (msg.value.trim() === "") {
-        msgError.textContent = "Message is required";
+        setFieldState(msg, msgError, "Message is required", false);
         valid = false;
     } else {
-        msgError.textContent = "";
+        setFieldState(msg, msgError, "", true);
     }
 
     // Vérifier l'acceptation
@@ -57,6 +70,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
     const acceptError = document.getElementById('acceptError');
     if (!accept.checked) {
         acceptError.textContent = "You must consent to be contacted";
+        acceptError.style.color = 'red';
         valid = false;
     } else {
         acceptError.textContent = "";

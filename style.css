@@ -17,7 +17,7 @@ body {
     max-width: 500px;
     width: 100%;
     background-color: #fff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -26,8 +26,7 @@ body {
     font-size: 24px;
     font-weight: 600;
     color: hsl(169, 82%, 27%);
-    position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .details {
@@ -39,11 +38,11 @@ body {
 
 .user-details, .query-details, .textarea-box, .accepted {
     margin-bottom: 15px;
-	width: 100%;
+    width: 100%;
 }
 
 .input-box, .email-box {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 input[type="text"],
@@ -74,10 +73,11 @@ textarea:focus {
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .query-type {
-    flex: 1;
+    flex: 1 1 45%; /* Responsive adjustment */
     padding: 10px;
     border: 1px solid hsl(186, 15%, 59%);
     border-radius: 5px;
@@ -115,7 +115,7 @@ textarea:focus {
 
 .button input {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     background-color: hsl(169, 82%, 27%);
     color: #fff;
     border: none;
@@ -135,4 +135,48 @@ textarea:focus {
     font-size: 14px;
     margin-top: 5px;
     font-family: 'Karla', sans-serif;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .title {
+        font-size: 22px;
+    }
+
+    .query-type {
+        flex: 1 1 100%;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    body {
+        padding: 20px;
+        height: auto;
+    }
+
+    .container {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .title {
+        font-size: 20px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 14px;
+    }
+
+    .button input {
+        font-size: 16px;
+    }
 }
